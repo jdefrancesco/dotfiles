@@ -1,0 +1,34 @@
+let g:indent_guides_enable_on_vim_startup = 0
+
+" noremap pumvisible() ? \"\" : \" \"
+
+let base16colorspace=256
+set nospell
+set nofoldenable
+set nocursorline
+set expandtab
+set background=dark
+set nolist
+set autowrite
+set belloff=all
+
+vnoremap <C-c> "+y
+
+" Insert line above cursor without entering INSERT mode.
+nmap <S-Enter> O<Esc>
+nmap <CR> o<Esc>
+
+" Bubble single lines
+nmap <C-Up> ddkP
+nmap <C-Down> ddp
+
+" Bubble multiple lines
+vmap <C-Up> xkP`[V`]
+vmap <C-Down> xp`[V`]
+
+if has("gui_running")
+    colorscheme codeschool
+    set guifont=Envy\ Code\ R:h13
+endif
+
+autocmd BufWritePre * %s/\s\+$//ge
