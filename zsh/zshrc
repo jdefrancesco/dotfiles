@@ -5,7 +5,7 @@ export HOMEBREW_GITHUB_API_TOKEN="9331bad17edcfd106f786d12164164b7b6119b99"
 #export ZSH_THEME="omega-minimal"
 export ZSH_THEME="powerlevel9k/powerlevel9k"
 export POWERLEVEL9K_DISABLE_RPROMPT=false
-# export ZSH_THEME="avit"
+# export ZSH_THEME="lukerandall"
 
 # CASE_SENSITIVE="true"
 
@@ -37,7 +37,6 @@ export PATH="$PATH:/usr/local/sbin:/usr/local/share:/Users/jdefr89/bin/javacc-5.
 export PATH="$PATH:/Users/jdefr89/.rvm/gems/ruby-1.9.2-p318/bin:/Users/jdefr89/.rvm/gems/ruby-1.9.2-p318@global/bin:/Users/jdefr89/.rvm/rubies/ruby-1.9.2-p318/bin:/Users/jdefr89/.rvm/bin:/sw/bin:/sw/sbin:/opt:/usr/local/bin:/usr/sbin:/usr/bin:/usr/share:/bin:/usr/games:/sbin:/Users/jdefr89/.rvm/bin:/Users/jdefr89/.bin:/usr/X11R6/bin:/Users/jdefr89/.rvm/bin"
 export PATH="$PATH:/usr/local/opt/ruby@2.2/bin"
 
-
 export GOPATH=$HOME/programming/Go
 
 export CDPATH=.:~:/etc:/var:~/programming
@@ -58,7 +57,6 @@ alias mvim='mvim --remote-silent'
 alias vim='vim'
 
 # Alias to manage and update config for zsh and vim
-alias so='source .zshrc && hash -r'
 alias zed='vim ~/.zshrc'
 
 # Grab external IP
@@ -87,3 +85,5 @@ alias t='todolist'
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
+eval "$(thefuck --alias)"
+export PATH=/usr/local/opt/python/libexec/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/MacGPG2/bin:/usr/local/share/dotnet:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Applications/Wireshark.app/Contents/MacOS:/usr/local/opt/qt/bin:/usr/local/opt/go/libexec/bin:/usr/local/sbin:/usr/local/share:/Users/jdefr89/bin/javacc-5.0/bin:/Users/jdefr89/.rvm/gems/ruby-1.9.2-p318/bin:/Users/jdefr89/.rvm/gems/ruby-1.9.2-p318@global/bin:/Users/jdefr89/.rvm/rubies/ruby-1.9.2-p318/bin:/Users/jdefr89/.rvm/bin:/sw/bin:/sw/sbin:/opt:/usr/share:/usr/games:/Users/jdefr89/.bin:/usr/X11R6/bin:/usr/local/opt/ruby@2.2/bin:/usr/local/opt/qt/bin:/usr/local/opt/go/libexec/bin:/usr/local/sbin:/usr/local/share:/Users/jdefr89/bin/javacc-5.0/bin:/Users/jdefr89/.rvm/gems/ruby-1.9.2-p318/bin:/Users/jdefr89/.rvm/gems/ruby-1.9.2-p318@global/bin:/Users/jdefr89/.rvm/rubies/ruby-1.9.2-p318/bin:/Users/jdefr89/.rvm/bin:/sw/bin:/sw/sbin:/opt:/usr/local/bin:/usr/sbin:/usr/bin:/usr/share:/bin:/usr/games:/sbin:/Users/jdefr89/.rvm/bin:/Users/jdefr89/.bin:/usr/X11R6/bin:/Users/jdefr89/.rvm/bin:/usr/local/opt/ruby@2.2/bin
