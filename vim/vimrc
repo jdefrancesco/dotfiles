@@ -14,18 +14,25 @@ let g:dotvim_settings.plugin_groups_include = ['python', 'scm']
 "let g:dotvim_settings.disabled_plugins=['vim-foo','vim-bar']
 source ~/.vim/vimrc
 
+set t_Co=256
+
 set nowrap
 set guifont=Envy\ Code\ R:h13
 
-if has("gui_running")
-  " colorscheme base16-gruvbox-dark-medium
-  colorscheme base16-flat
-  autocmd GUIEnter * set vb t_vb=
-  " colorscheme Tomorrow-Night
-else
-  colorscheme molokai
+set transparency=0
+
+if filereadable(expand("~/.vimrc_background"))
+  let base16colorspace=256
+  source ~/.vimrc_background
 endif
 
+" if has("gui_running")
+"   colorscheme base16-gruvbox-dark-medium
+"   autocmd GUIEnter * set vb t_vb=
+" else
+"   colorscheme molokai
+" endif
+"
 set tabstop=8
 set softtabstop=0
 set expandtab
@@ -38,8 +45,10 @@ autocmd BufWritePre *.c,*.py %s/\s\+$//e
 " vimwiki/vimwiki
 let g:vimwiki_list = [{'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': '.md'}]
 
-" Stop that fucking bell!
 set noerrorbells 
 set novisualbell
 set nocursorcolumn
 set autochdir
+
+set colorcolumn=0
+set nolist
