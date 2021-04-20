@@ -4,22 +4,17 @@ export TERM="xterm-256color"
 export ZSH=$HOME/.oh-my-zsh
 export DYLD_LIBRARY_PATH=/usr/local/opt/unicorn/lib/:$DYLD_LIBRARY_PATH
 export HOMEBREW_GITHUB_API_TOKEN="9331bad17edcfd106f786d12164164b7b6119b99"
-export ZSH_THEME="mh"
+# export ZSH_THEME="mh"
+# export ZSH_THEME="flazz"
 # export ZSH_THEME="omega-minimal"
 # export ZSH_THEME="powerlevel9k/powerlevel9k"
+export ZSH_THEME="lambda"
 # export POWERLEVEL9K_DISABLE_RPROMPT=false
 # export ZSH_THEME="lukerandall"
 
 # CASE_SENSITIVE="true"
 
 export EDITOR="vim"
-# Comment this out to disable weekly auto-update checks
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment following line if you want to disable colors in ls
-# DISABLE_LS_COLORS="true"
-
-# Uncomment following line if you want to disable autosetting terminal title.
 DISABLE_AUTO_TITLE="true"
 
 # Uncomment following line if you want disable red dots displayed while waiting for completion
@@ -31,13 +26,9 @@ plugins=(git osx man httpie brew autojump pip python themes virtualenv)
 
 source $ZSH/oh-my-zsh.sh
 
-
 # Customize to your needs...
 export PATH="$PATH:/usr/local/opt/qt/bin"
 export PATH="$PATH:/usr/local/opt/go/libexec/bin"
-export PATH="$PATH:/usr/local/sbin:/usr/local/share:/Users/jdefr89/bin/javacc-5.0/bin"
-export PATH="$PATH:/Users/jdefr89/.rvm/gems/ruby-1.9.2-p318/bin:/Users/jdefr89/.rvm/gems/ruby-1.9.2-p318@global/bin:/Users/jdefr89/.rvm/rubies/ruby-1.9.2-p318/bin:/Users/jdefr89/.rvm/bin:/sw/bin:/sw/sbin:/opt:/usr/local/bin:/usr/sbin:/usr/bin:/usr/share:/bin:/usr/games:/sbin:/Users/jdefr89/.rvm/bin:/Users/jdefr89/.bin:/usr/X11R6/bin:/Users/jdefr89/.rvm/bin"
-export PATH="$PATH:/usr/local/opt/ruby@2.2/bin"
 
 export CDPATH=.:~:/etc:/var:~/programming
 
@@ -48,11 +39,14 @@ alias ls="exa"
 alias lsusb='system_profiler SPUSBDataType'
 alias shuf="gshuf"
 alias cat="ccat"
-alias mvim='mvim --remote-silent'
-alias vim='vim'
 alias zed='vim ~/.zshrc'
 alias myip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias dnsinuse="dig whoami.akamai.net +short"
+
+# This will clear ALL ideas.
+clearideas() {
+    for i in {1..$1}; do idea solve $i; done
+}
 
 # Custom exports
 export GOPATH=$HOME/Programming/Go
@@ -73,5 +67,6 @@ BASE16_SHELL=$HOME/.config/base16-shell/
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-eval "$(thefuck --alias)"
+# eval $(thefuck --alias)
 export PATH=/usr/local/opt/python/libexec/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/MacGPG2/bin:/usr/local/share/dotnet:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Applications/Wireshark.app/Contents/MacOS:/usr/local/opt/qt/bin:/usr/local/opt/go/libexec/bin:/usr/local/sbin:/usr/local/share:/Users/jdefr89/bin/javacc-5.0/bin:/Users/jdefr89/.rvm/gems/ruby-1.9.2-p318/bin:/Users/jdefr89/.rvm/gems/ruby-1.9.2-p318@global/bin:/Users/jdefr89/.rvm/rubies/ruby-1.9.2-p318/bin:/Users/jdefr89/.rvm/bin:/sw/bin:/sw/sbin:/opt:/usr/share:/usr/games:/Users/jdefr89/.bin:/usr/X11R6/bin:/usr/local/opt/ruby@2.2/bin:/usr/local/opt/qt/bin:/usr/local/opt/go/libexec/bin:/usr/local/sbin:/usr/local/share:/Users/jdefr89/bin/javacc-5.0/bin:/Users/jdefr89/.rvm/gems/ruby-1.9.2-p318/bin:/Users/jdefr89/.rvm/gems/ruby-1.9.2-p318@global/bin:/Users/jdefr89/.rvm/rubies/ruby-1.9.2-p318/bin:/Users/jdefr89/.rvm/bin:/sw/bin:/sw/sbin:/opt:/usr/local/bin:/usr/sbin:/usr/bin:/usr/share:/bin:/usr/games:/sbin:/Users/jdefr89/.rvm/bin:/Users/jdefr89/.bin:/usr/X11R6/bin:/Users/jdefr89/.rvm/bin:/usr/local/opt/ruby@2.2/bin
+eval "$(rbenv init -)"
