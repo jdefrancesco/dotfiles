@@ -20,6 +20,8 @@ set ssl_starttls = yes
 bind index G imap-fetch-mail
 bind index <tab> sync-mailbox
 
+set signature = "J. DeFrancesco"
+
 set editor = "vim"
 set charset = "utf-8"
 set record = ''
@@ -34,7 +36,7 @@ bind index - collapse-thread
 bind index _ collapse-all
 
 # Theme
-source ~/.mutt/dracula.muttrc
+source ~/.mutt/gruvbox/colors-gruvbox-shuber.muttrc
 
 # Scroll inside a message
 bind pager <up> previous-line
@@ -43,3 +45,33 @@ bind pager <down> next-line
 set sleep_time = 0 # Be fast.
 set smart_wrap
 set beep_new
+
+# Side bars
+set sidebar_visible = no
+set sidebar_width = 30
+color sidebar_new brightred default
+
+mailboxes =INBOX
+
+# b will toggle side bar
+macro index b '<enter-command>toggle sidebar_visible<enter>'
+macro pager b '<enter-command>toggle sidebar_visible<enter>'
+
+set hostname = shadow
+
+# PGP
+set crypt_use_gpgme = yes
+set crypt_replyencrypt = yes
+set crypt_replysign = yes
+set crypt_replysignencrypted = yes
+set crypt_verify_sig = yes
+set pgp_show_unusable = no
+set pgp_auto_decode = yes
+source ~/.mutt/gpg.rc
+
+# Alias file
+set alias_file = ~/.mutt/aliases
+set sort_alias = alias
+set reverse_alias = yes
+source $alias_file
+source ~/.mutt/aliases
