@@ -1,9 +1,10 @@
-# Term
+
 export TERM="xterm-256color"
 # export TERM="screen-256color"
 export ZSH=$HOME/.oh-my-zsh
 export DYLD_LIBRARY_PATH=/usr/local/opt/unicorn/lib/:$DYLD_LIBRARY_PATH
-export HOMEBREW_GITHUB_API_TOKEN="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"
+# export HOMEBREW_GITHUB_API_TOKEN="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"
+export HOMEBREW_GITHUB_API_TOKEN="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"
 export ZSH_THEME="lambda"
 export EDITOR="vim"
 # export POWERLEVEL9K_DISABLE_RPROMPT=false
@@ -21,9 +22,8 @@ source $ZSH/oh-my-zsh.sh
 autoload -Uz run-help
 
 # [+] PATH options:
-export PATH=/usr/local/opt/python/libexec/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/MacGPG2/bin:/usr/local/share/dotnet:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Applications/Wireshark.app/Contents/MacOS:/usr/local/opt/qt/bin:/usr/local/opt/go/libexec/bin:/usr/local/sbin:/usr/local/share:/Users/jdefr89/bin/javacc-5.0/bin:/Users/jdefr89/.rvm/gems/ruby-1.9.2-p318/bin:/Users/jdefr89/.rvm/gems/ruby-1.9.2-p318@global/bin:/Users/jdefr89/.rvm/rubies/ruby-1.9.2-p318/bin:/Users/jdefr89/.rvm/bin:/sw/bin:/sw/sbin:/opt:/usr/share:/usr/games:/Users/jdefr89/.bin:/usr/X11R6/bin:/usr/local/opt/ruby@2.2/bin:/usr/local/opt/qt/bin:/usr/local/opt/go/libexec/bin:/usr/local/sbin:/usr/local/share:/Users/jdefr89/bin/javacc-5.0/bin:/Users/jdefr89/.rvm/gems/ruby-1.9.2-p318/bin:/Users/jdefr89/.rvm/gems/ruby-1.9.2-p318@global/bin:/Users/jdefr89/.rvm/rubies/ruby-1.9.2-p318/bin:/Users/jdefr89/.rvm/bin:/sw/bin:/sw/sbin:/opt:/usr/local/bin:/usr/sbin:/usr/bin:/usr/share:/bin:/usr/games:/sbin:/Users/jdefr89/.rvm/bin:/Users/jdefr89/.bin:/usr/X11R6/bin:/Users/jdefr89/.rvm/bin:/usr/local/opt/ruby@2.2/bin
+export PATH=/usr/local/opt/python/libexec/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/MacGPG2/bin:/usr/local/share/dotnet:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Applications/Wireshark.app/Contents/MacOS:/usr/local/opt/qt/bin:/usr/local/opt/go/libexec/bin:/usr/local/sbin:/usr/local/share:/Users/jdefr89/bin/javacc-5.0/bin:/Users/jdefr89/.rvm/gems/ruby-1.9.2-p318/bin:/Users/jdefr89/.rvm/gems/ruby-1.9.2-p318@global/bin:/Users/jdefr89/.rvm/rubies/ruby-1.9.2-p318/bin:/Users/jdefr89/.rvm/bin:/sw/bin:/sw/sbin:/opt:/usr/share:/usr/games:/Users/jdefr89/.bin:/usr/X11R6/bin:/usr/local/opt/ruby@2.2/bin:/usr/local/opt/qt/bin:/usr/local/opt/go/libexec/bin:/usr/local/sbin:/usr/local/share:/Users/jdefr89/bin/javacc-5.0/bin:/Users/jdefr89/.rvm/gems/ruby-1.9.2-p318/bin:/Users/jdefr89/.rvm/gems/ruby-1.9.2-p318@global/bin:/Users/jdefr89/.rvm/rubies/ruby-1.9.2-p318/bin:/Users/jdefr89/.rvm/bin:/sw/bin:/sw/sbin:/opt:/usr/local/bin:/usr/sbin:/usr/bin:/usr/share:/bin:/usr/games:/sbin:/Users/jdefr89/.rvm/bin:/Users/jdefr89/.bin:/usr/X11R6/bin:/Users/jdefr89/.rvm/bin:/usr/local/opt/ruby@2.2/bin:/usr/local/gcc-4.8.1-for-linux64/bin
 export PATH="$PATH:/usr/local/opt/qt/bin"
-export PATH="$PATH:/usr/local/opt/go/libexec/bin"
 export CDPATH=.:~:/etc:/var:~/programming
 
 # [+] Locale
@@ -49,8 +49,9 @@ alias dnsinuse="dig whoami.akamai.net +short" # Get what DNS server I am using.
 [[ -x /usr/local/bin/lsd ]] && alias ls="lsd" # lsd is a ls replacement.
 
 # Custom exports:
-export GOPATH=$HOME/Programming/Go
-
+export GOPATH="$HOME/Programming/Go"
+export GOROOT="/usr/local/opt/go/libexec"
+export PATH="$GOPATH/bin:$GOROOT/bin:$HOME/.local/bin:$PATH"
 # [+] History options:
 setopt histignorespace
 setopt histsavenodups
@@ -93,3 +94,5 @@ function backup() {
 
 
 source /Users/jdefr89/.config/broot/launcher/bash/br
+export PATH="$PATH:$HOME/.axiom/interact"
+
