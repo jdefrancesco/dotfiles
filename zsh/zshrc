@@ -46,8 +46,10 @@ esac
 alias zed='vim ~/.zshrc && source ~/.zshrc && hash -r && echo "[*] ZSHRC processed successfully"' # Command to open zshrc for reconfiguration.
 alias myip="dig +short myip.opendns.com @resolver1.opendns.com" # Get my external IP address
 alias dnsinuse="dig whoami.akamai.net +short" # Get what DNS server I am using.
-[[ -x /usr/local/bin/lsd ]] && alias ls="lsd" # lsd is a ls replacement.
 
+[[ -x /usr/local/bin/lsd ]] && alias ls="lsd" # lsd is a ls replacement.
+[[ -x /usr/local/bin/wtfutil ]] && alias mydash="wtfutil" # alias for wtfutil terminal dashboard..
+#
 # Custom exports:
 export GOPATH="$HOME/Programming/Go"
 export GOROOT="/usr/local/opt/go/libexec"

@@ -9,8 +9,25 @@ wtf:
     rows: [10, 10, 10, 4, 4, 90]
   refreshInterval: 1
   mods:
+    # clocks_a:
+    #   colors:
+    #     rows:
+    #       even: "lightblue"
+    #       odd: "white"
+    #   enabled: true
+    #   locations:
+    #     NewYork: "America/New York"
+    #   position:
+    #     top: 0
+    #     left: 0
+    #     height: 1
+    #     width: 1
+    #   refreshInterval: 15
+    #   sort: "alphabetical"
+    #   title: "Clocks A"
+    #   type: "clocks"
     cmdrunner:
-      args: ["-h"]
+      args: ["-h", "-P"]
       cmd: "df"
       enabled: true
       position:
@@ -60,7 +77,7 @@ wtf:
       enabled: true
       position:
         top: 1
-        left: 5
+        left: 3
         height: 1
         width: 1
       refreshInterval: 15
@@ -81,7 +98,7 @@ wtf:
     security:
       enabled: true
       position:
-        top: 0
+        top: 1
         left: 5
         height: 1
         width: 1
@@ -91,25 +108,13 @@ wtf:
       city: "West Chester"
       position:
         top: 1
-        left: 3
+        left: 4
         height: 1
         width: 1
       refreshInterval: 300
       unit: "m"
       view: 0
       language: "en"
-    resourceusage:
-      cpuCombined: false
-      enabled: true
-      position:
-        top: 1
-        left: 4
-        height: 1
-        width: 1
-      refreshInterval: 1
-      showCPU: true
-      showMem: true
-      showSwp: true
     hackernews:
       enabled: true
       numberOfStories: 10
@@ -137,25 +142,13 @@ wtf:
       dateFormat: "%H:%M %d %b %y"
       enabled: true
       position:
-        top: 2
-        left: 3
-        height: 2
-        width: 2
+        top: 0
+        left: 5
+        height: 1
+        width: 1
       refreshInterval: 8
       repositories:
-        - "/Users/jdefr89/Research/Consulting/ObjectSecurity"
-        - "/Users/jdefr89/Programming/Go/src/github.com/jdefrancesco/ditto.git"
-    istats:
-      args: ["all"]
-      cmd: "istats"
-      enabled: true
-      type: "cmdrunner"
-      position:
-        top: 4
-        left: 0
-        height: 2
-        width: 2
-      refreshInterval: 1
+      - "~/Research/Consulting/ObjectSecurity"
     uptime:
       args: [""]
       cmd: "uptime"
@@ -166,14 +159,4 @@ wtf:
         height: 1
         width: 2
       refreshInterval: 30
-      type: cmdrunner
-    brew_outdated:
-      args: ["outdated"]
-      cmd: "brew"
-      enabled: true
-      position:
-        top: 3
-        left: 0
-        width: 2
-        height: 1
       type: cmdrunner
