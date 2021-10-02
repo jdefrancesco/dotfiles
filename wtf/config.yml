@@ -40,10 +40,10 @@ wtf:
       enabled: true
       filename: "todo.yaml"
       position:
-        top: 0
+        top: 1
         left: 0
         height: 1
-        width: 1
+        width: 2
       refreshInterval: 3600
     ipinfo:
       colors:
@@ -68,7 +68,7 @@ wtf:
     digitalclock:
       color: orange
       enabled: true
-      font: bigfont
+      font: smallfont
       hourFormat: 12
       position:
         top: 0
@@ -116,7 +116,7 @@ wtf:
       position:
         top: 2
         left: 0
-        height: 1
+        height: 2
         width: 3
       storyType: top
       refreshInterval: 900
@@ -161,16 +161,16 @@ wtf:
       cmd: "uptime"
       enabled: true
       position:
-        top: 1
+        top: 0
         left: 0
         height: 1
-        width: 2
+        width: 1
       refreshInterval: 30
       type: cmdrunner
     brew_outdated:
       args: ["outdated"]
       cmd: "brew"
-      enabled: true
+      enabled: false
       position:
         top: 3
         left: 0
