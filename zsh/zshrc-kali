@@ -1,0 +1,87 @@
+
+export ZSH="/home/jdefr89/.oh-my-zsh"
+ZSH_THEME="bureau"
+
+# Setting this variable when ZSH_THEME=random will cause zsh to load
+# a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
+# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
+
+# CASE_SENSITIVE="true"
+# HYPHEN_INSENSITIVE="true"
+
+export UPDATE_ZSH_DAYS=10
+
+DISABLE_AUTO_TITLE="true"
+COMPLETION_WAITING_DOTS="true"
+
+plugins=(git httpie autojump colored-man-pages fzf nmap tmux)
+
+source $ZSH/oh-my-zsh.sh
+
+export MANPATH="/usr/local/man:$MANPATH"
+export LANG=en_US.UTF-8
+
+export EDITOR='vim'
+export ARCHFLAGS="-arch x86_64"
+
+# --- Aliases
+
+# Command aliases
+alias ip="ip -c=always -h -p"
+# Edit zsh config and source it.
+alias zshconfig="vim ~/.zshrc"
+alias zshrefresh="source ~/.zshrc && hash -r"
+
+export PATH=$PATH:~/.local/bin:~/.bins
+
+# For base16 colors
+BASE16_SHELL="$HOME/.config/base16-shell/"
+[ -n "$PS1" ] && \
+        [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
+                eval "$("$BASE16_SHELL/profile_helper.sh")"
+
+# Golang vars
+export GOROOT=/usr/local/go
+export GOPATH=$HOME/go
+export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
+export GOPATH=/home/jdefr89/go
+export PATH=$PATH:/usr/local/sbin:/usr/sbin:/sbin:/usr/local/bin:/usr/bin:/bin:/usr/local/games
+
+# Function:    tombenv
+# Description: Quickly setup my encrypted research environment.
+#              Note it will turn off swapping.
+function tombenv() {
+    echo "[!] Opening tomb."
+    sudo swapoff -a # Turn off swap for good measure.
+    sudo tomb open ~/.tomb/research.tomb -k ~/.tomb/research.tomb.key
+    cd /media/research
+    echo "[!] Tomb opened. Run tombclose when finished"
+}
+
+# Function:    tombdone
+# Description: Close tombs, keeping all safe. We turn
+#              swapping back on as well. All state should be restored
+#              and work within the tomb safe.
+function tombdone() {
+    echo " "
+    cd ~/ # return to home directory so we can close tomb.
+    sudo tomb close
+    sudo swapon -a # We turned it off in tombenv.
+    echo "[!] Tomb closed. Done."
+}
+
+# Function: tombslam
+# Description: Any open tools will be slammed. Can use if things
+#              get wonky running tombdone command.
+function tombslam() {
+    echo " "
+    echo "[!] Force closing all tombs!"
+    cd ~/
+    sudo tomb slam all
+}
+
+function getimages() {
+    echo "[+] Getting images from $1"
+    wget --random-wait --limit-rate=100k -r -A=.jpg,.png,.jpeg $1
+    echo "[+] Done!"
+}
