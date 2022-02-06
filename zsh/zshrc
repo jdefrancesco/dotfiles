@@ -112,3 +112,9 @@ function getimages() {
     wget --random-wait --limit-rate=100k -r -A=.jpg,.png,.jpeg $1
     echo "[+] Done!"
 }
+#
+# jenv
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"
+
+unalias gau
