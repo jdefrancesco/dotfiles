@@ -6,10 +6,8 @@ set envelope_from = yes
 # NEED THIS TO AVOID "No Authenticators Available" error
 set smtp_authenticators = "gssapi:login"
 set smtp_url = "smtps://jdefr89@gmail.com@smtp.gmail.com:465/"
-set smtp_pass = "tzkjlsyirushrjlc"
 
 set imap_user = "jdefr89@gmail.com"
-set imap_pass = "tzkjlsyirushrjlc"
 
 set folder = "imaps://imap.gmail.com:993"
 set spoolfile = "+INBOX"
