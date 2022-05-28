@@ -110,16 +110,8 @@ function getimages() {
     wget --random-wait --limit-rate=100k -r -A=.jpg,.png,.jpeg $1
     echo "[+] Done!"
 }
-<<<<<<< HEAD
 
-=======
-#
-# jenv
-export PATH="$HOME/.jenv/bin:$PATH"
-export PATH="/Library/Frameworks/Python.framework/Versions/3.7/bin:$PATH"
-eval "$(jenv init -)"
 
-unalias gau
 # eval
 #             fuck () {
 #                 TF_PYTHONIOENCODING=$PYTHONIOENCODING;
@@ -162,4 +154,3 @@ function seeHttpUpload {
     tput bold; echo "--- HTTP POST/GET ---"; tput sgr0
     sudo tcpdump -i en0 -vv -s 0 -A 'tcp dst port 80 or tcp dst port 443 and tcp[((tcp[12:1] & 0xf0) >> 2):4] = 0x47455420 or tcp[((tcp[12:1] & 0xf0) >> 2):4] = 0x504F5354' and host $BLOCK_IP
 }
->>>>>>> 9e596e724c650fecfa60520a99bcc2f048b0a43c
