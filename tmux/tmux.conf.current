@@ -33,15 +33,7 @@ set -sg escape-time 1
 # don't rename windows automatically
 set-option -g allow-rename off
 
-# Smart pane switching with awareness of vim splits
-bind -n C-k run-shell 'tmux-vim-select-pane -U'
-bind -n C-j run-shell 'tmux-vim-select-pane -D'
-bind -n C-h run-shell 'tmux-vim-select-pane -L'
-bind -n C-l run-shell 'tmux-vim-select-pane -R'
-bind -n "C-\\" run-shell 'tmux-vim-select-pane -l'
 
-# Bring back clear screen under tmux prefix
-bind C-l send-keys 'C-l'
 # Bring back kill line under tmux prefix
 bind C-k send-keys 'C-k'
 
@@ -77,7 +69,6 @@ set -g base-index 1
 
 # syntax highlighting in Vim
 set -g default-terminal "xterm-256color"
-set -ga terminal-overrides ",xterm-256color:Tc"
 
 # disable programs changing window names via terminal escape sequence
 set-window-option -g allow-rename off
@@ -98,5 +89,3 @@ set -g window-status-separator ""
 set -g status-right ' #(battery) '
 set -g status-interval 15
 
-# disable possibly set visual editor
-set-environment -gu GEM_EDITOR
