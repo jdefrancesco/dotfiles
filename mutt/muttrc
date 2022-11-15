@@ -33,8 +33,6 @@ unset collapse_unread
 bind index - collapse-thread
 bind index _ collapse-all
 
-# Theme
-source ~/.mutt/gruvbox/colors-gruvbox-shuber.muttrc
 
 # Scroll inside a message
 bind pager <up> previous-line
@@ -47,7 +45,6 @@ set beep_new
 # Side bars
 set sidebar_visible = no
 set sidebar_width = 30
-color sidebar_new brightred default
 
 mailboxes =INBOX
 
@@ -55,7 +52,7 @@ mailboxes =INBOX
 macro index b '<enter-command>toggle sidebar_visible<enter>'
 macro pager b '<enter-command>toggle sidebar_visible<enter>'
 
-set hostname = shadow
+set hostname = infinite
 
 # PGP
 set crypt_use_gpgme = yes
