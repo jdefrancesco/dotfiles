@@ -21,9 +21,6 @@ call plug#begin('~/.vim/plugged')
     " Go programming extension
     Plug 'fatih/vim-go'
     " Ultimate snippets for vim
-    Plug 'sirver/ultisnips'
-    " Snippest are seperate from engine
-    Plug 'honza/vim-snippets'
     " Taglist
     Plug 'vim-scripts/taglist.vim'
     " Buftabline
@@ -52,8 +49,6 @@ call plug#begin('~/.vim/plugged')
     Plug 'xolox/vim-session'
     " Vim misc
     Plug 'xolox/vim-misc'
-    " Vim arduino support
-    Plug 'stevearc/vim-arduino'
     " Everblush theme
     Plug 'mangeshrex/everblush.vim'
     Plug 'sainnhe/sonokai'
@@ -61,12 +56,15 @@ call plug#begin('~/.vim/plugged')
     Plug 'jacoborus/tender.vim'
     " Convert number under cursor to hex or back.
     Plug 'rr-/vim-hexdec'
+    " LSP
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    " New CtrlP
+    " Plug 'ctrlpvim/ctrlp.vim'
+    " OLD
     Plug 'kien/ctrlp.vim'
 call plug#end()
 
-" set runtimepath^=~/.vim/bundle/ctrlp.vim
-
+let g:go_bin_path = $HOME."/go/bin"
 " Colors
 set termguicolors
 colorscheme sonokai
@@ -82,26 +80,26 @@ endif
 " Sneak config options
 let g:sneak#label = 1
 
-" Clang completion engine
-if has('linux')
-    let g:clang_library_path = '/lib/x86_64-linux-gnu/libclang-10.so'
-    let g:clang_c_options = '-std=c11'
-    let g:clang_cpp_options = '-std=c++11 -stdlib=libc++'
-endif
+" " Clang completion engine
+" if has('linux')
+"     let g:clang_library_path = '/lib/x86_64-linux-gnu/libclang-10.so'
+"     let g:clang_c_options = '-std=c11'
+"     let g:clang_cpp_options = '-std=c++11 -stdlib=libc++'
+" endif
 
-if has('darwin')
-    let g:clang_library_path = '/Library/Developer/CommandLineTools/usr/lib/'
-    let g:clang_c_options = '-std=c11'
-    let g:clang_cpp_options = '-std=c++11 -stdlib=libc++'
-endif
+" if has('darwin')
+"     let g:clang_library_path = '/Library/Developer/CommandLineTools/usr/lib/'
+"     let g:clang_c_options = '-std=c11'
+"     let g:clang_cpp_options = '-std=c++11 -stdlib=libc++'
+" endif
 
 
-let g:UltiSnipsExpandTrigger="<c-space>"
-let g:UltiSnipsListSnippets="<c-l>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-" If you want :UltiSnipsEdit to split your window.
-let g:UltiSnipsEditSplit="vertical"
+" let g:UltiSnipsExpandTrigger="<c-space>"
+" let g:UltiSnipsListSnippets="<c-l>"
+" let g:UltiSnipsJumpForwardTrigger="<c-b>"
+" let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+" " If you want :UltiSnipsEdit to split your window.
+" let g:UltiSnipsEditSplit="vertical"
 
 " Ctrl-P
 let g:ctrlp_show_hidden=1
