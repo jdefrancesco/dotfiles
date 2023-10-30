@@ -28,7 +28,7 @@ PROMPT='[${user}@${host_repr}${pwd}]$(git_prompt_info)$ '
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[white]%}("
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[white]%}) %{$fg[yellow]%}%{$fg[green]%}%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_CLEAN="] %{$fg[white]%}"
+ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[red]%}"
 # elaborate exitcode on the right when >0
 return_code_enabled="%(?..%{$fg[red]%}%? ↵%{$reset_color%})"
 return_code_disabled=
