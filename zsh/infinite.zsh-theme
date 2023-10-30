@@ -25,10 +25,17 @@ PROMPT='[${user}@${host_repr}${pwd}]$(git_prompt_info)$ '
 
 # i would prefer 1 icon that shows the "most drastic" deviation from HEAD,
 # but lets see how this works out
-ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[white]%}("
-ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[white]%}) %{$fg[yellow]%}%{$fg[green]%}%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[red]%}"
+# ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[white]%}("
+# ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
+# ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[white]%}) %{$fg[yellow]%}%{$fg[green]%}%{$reset_color%}"
+# ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[red]%}"
+
+# git settings
+ZSH_THEME_GIT_PROMPT_PREFIX=" ${FG[075]}(${FG[078]}"
+ZSH_THEME_GIT_PROMPT_CLEAN=""
+ZSH_THEME_GIT_PROMPT_DIRTY="${FG[214]}*%{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_SUFFIX="${FG[075]})%{$reset_color%}"
+
 # elaborate exitcode on the right when >0
 return_code_enabled="%(?..%{$fg[red]%}%? ↵%{$reset_color%})"
 return_code_disabled=
