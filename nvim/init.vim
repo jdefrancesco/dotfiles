@@ -2,7 +2,6 @@ set nocompatible
 
 
 call plug#begin('~/.vim/plugged')
-    " Note Taking
     Plug 'fmoralesc/vim-pad'
     " NERDTree
     Plug 'scrooloose/nerdtree'
@@ -20,7 +19,6 @@ call plug#begin('~/.vim/plugged')
     Plug 'nanotech/jellybeans.vim'
     " Go programming extension
     Plug 'fatih/vim-go'
-    " Ultimate snippets for vim
     " Taglist
     Plug 'vim-scripts/taglist.vim'
     " Buftabline
@@ -51,6 +49,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'xolox/vim-misc'
     " Everblush theme
     Plug 'mangeshrex/everblush.vim'
+    " Awesome color theme
     Plug 'sainnhe/sonokai'
     " Tender colorscheme
     Plug 'jacoborus/tender.vim'
@@ -59,16 +58,16 @@ call plug#begin('~/.vim/plugged')
     " LSP
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     " New CtrlP
-    " Plug 'ctrlpvim/ctrlp.vim'
-    " OLD
-    Plug 'kien/ctrlp.vim'
+    Plug 'ctrlpvim/ctrlp.vim'
 call plug#end()
 
 let g:go_bin_path = $HOME."/go/bin"
+let g:go_doc_popup_window = 1
+
 " Colors
 set termguicolors
 colorscheme sonokai
-let g:airline_theme = 'tender'
+let g:airline_theme = 'sonokai'
 
 if has('gui_macvim')
     " set guifont=Hack:h10
@@ -76,35 +75,10 @@ if has('gui_macvim')
     set linespace=0
 endif
 
-
 " Sneak config options
 let g:sneak#label = 1
-
-" " Clang completion engine
-" if has('linux')
-"     let g:clang_library_path = '/lib/x86_64-linux-gnu/libclang-10.so'
-"     let g:clang_c_options = '-std=c11'
-"     let g:clang_cpp_options = '-std=c++11 -stdlib=libc++'
-" endif
-
-" if has('darwin')
-"     let g:clang_library_path = '/Library/Developer/CommandLineTools/usr/lib/'
-"     let g:clang_c_options = '-std=c11'
-"     let g:clang_cpp_options = '-std=c++11 -stdlib=libc++'
-" endif
-
-
-" let g:UltiSnipsExpandTrigger="<c-space>"
-" let g:UltiSnipsListSnippets="<c-l>"
-" let g:UltiSnipsJumpForwardTrigger="<c-b>"
-" let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-" " If you want :UltiSnipsEdit to split your window.
-" let g:UltiSnipsEditSplit="vertical"
-
-" Ctrl-P
 let g:ctrlp_show_hidden=1
 
-let g:go_doc_popup_window = 1
 
 nnoremap <C-M> :bnext<CR>
 nnoremap <C-N> :bprev<CR>
@@ -130,10 +104,9 @@ set nocursorline
 set ignorecase
 set smartcase
 set incsearch
-set hlsearch
+" set hlsearch
 
 set shell=/bin/zsh
-let g:session_autosave = 'yes'
 
 " Get rid of trailing white space when we save.
 autocmd BufWritePre * %s/\s\+$//e
@@ -157,7 +130,6 @@ filetype on
 let mapleader=","
 
 " Toggle NERDTree
-" nnoremap    Leader>f :NERDTreeToggle<Enter>
 nnoremap <F3> :NERDTreeToggle<CR>
 " Toggle TagBar
 nnoremap <F2> :TagbarToggle<CR>
@@ -179,7 +151,6 @@ set listchars=trail:·,tab:▸\ ,eol:¬
 nnoremap <leader>l :set list!<CR> " Toggle tabs and EOL
 nnoremap <leader>ec :e $MYVIMRC<CR>
 
-let g:pad#dir = "~/Dropbox/ObsidianNotes/Pad/"
 set belloff=all
 
 
@@ -199,3 +170,4 @@ endfunction
 " }}}}
 "
 let g:session_autoload = 'no'
+let g:session_autosave = 'yes'
