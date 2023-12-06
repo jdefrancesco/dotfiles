@@ -59,6 +59,8 @@ call plug#begin('~/.vim/plugged')
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     " New CtrlP
     Plug 'ctrlpvim/ctrlp.vim'
+
+    Plug '0xStabby/chatgpt-vim'
 call plug#end()
 
 let g:go_bin_path = $HOME."/go/bin"
@@ -94,7 +96,6 @@ set ttyfast
 set nowrap
 
 set tabstop=4
-set softtabstop=0
 set expandtab
 set shiftwidth=4
 set smarttab
@@ -171,3 +172,4 @@ endfunction
 "
 let g:session_autoload = 'no'
 let g:session_autosave = 'yes'
+
