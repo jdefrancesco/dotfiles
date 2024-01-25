@@ -1,14 +1,10 @@
-set nocompatible
-
-
 call plug#begin('~/.vim/plugged')
     Plug 'fmoralesc/vim-pad'
     " NERDTree
     Plug 'scrooloose/nerdtree'
     " Fun status bar
     Plug 'vim-airline/vim-airline'
-    " Git co-pilot
-    Plug 'github/copilot.vim'
+    Plug 'vim-airline/vim-airline-themes'
     " C Vim extension
     Plug 'vim-scripts/c.vim'
     " Git plugin
@@ -17,8 +13,6 @@ call plug#begin('~/.vim/plugged')
     Plug 'morhetz/gruvbox'
     " Jellybean colorscheme
     Plug 'nanotech/jellybeans.vim'
-    " Go programming extension
-    Plug 'fatih/vim-go'
     " Taglist
     Plug 'vim-scripts/taglist.vim'
     " Buftabline
@@ -29,8 +23,6 @@ call plug#begin('~/.vim/plugged')
     Plug 'altercation/vim-colors-solarized'
     " Auto comment/decomment
     Plug 'tpope/vim-commentary'
-    " Fugitive Git
-    Plug 'tpope/vim-fugitive'
     " Tabular
     Plug 'godlygeek/tabular'
     " Sneak - Easy movement
@@ -57,25 +49,25 @@ call plug#begin('~/.vim/plugged')
     Plug 'rr-/vim-hexdec'
     " LSP
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
-    " New CtrlP
+    " CtrlP
     Plug 'ctrlpvim/ctrlp.vim'
-
-    Plug '0xStabby/chatgpt-vim'
+    Plug 'projekt0n/github-nvim-theme'
 call plug#end()
 
-let g:go_bin_path = $HOME."/go/bin"
+" set completeopt+=noselect
+
+" let g:go_bin_path = $HOME."/go/bin"
+let g:go_bin_path = $HOME."/.local/bin"
 let g:go_doc_popup_window = 1
+
+
+let g:python3_host_prog = '/usr/bin/python3'
 
 " Colors
 set termguicolors
-colorscheme sonokai
-let g:airline_theme = 'sonokai'
+colorscheme github_dark_dimmed
+let g:airline_theme='minimalist'
 
-if has('gui_macvim')
-    " set guifont=Hack:h10
-    set guifont=TerminusTTF:h14
-    set linespace=0
-endif
 
 " Sneak config options
 let g:sneak#label = 1
@@ -91,12 +83,9 @@ set wildmenu
 set wildmode=list:full
 set wildignorecase
 set nu
-
-set ttyfast
 set nowrap
-
-set tabstop=4
 set expandtab
+set tabstop=4
 set shiftwidth=4
 set smarttab
 set autoindent
@@ -105,7 +94,6 @@ set nocursorline
 set ignorecase
 set smartcase
 set incsearch
-" set hlsearch
 
 set shell=/bin/zsh
 
