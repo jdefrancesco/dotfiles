@@ -1,3 +1,4 @@
+set nocompatible
 call plug#begin('~/.vim/plugged')
     Plug 'fmoralesc/vim-pad'
     " NERDTree
@@ -9,8 +10,8 @@ call plug#begin('~/.vim/plugged')
     Plug 'vim-scripts/c.vim'
     " Git plugin
     Plug 'tpope/vim-fugitive'
-    " Vim themes
     Plug 'morhetz/gruvbox'
+    Plug 'dhananjaylatkar/cscope_maps.nvim'
     " Jellybean colorscheme
     Plug 'nanotech/jellybeans.vim'
     " Taglist
@@ -51,7 +52,10 @@ call plug#begin('~/.vim/plugged')
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     " CtrlP
     Plug 'ctrlpvim/ctrlp.vim'
+    " Themes
     Plug 'projekt0n/github-nvim-theme'
+    " Golang support
+    Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 call plug#end()
 
 " set completeopt+=noselect
@@ -73,7 +77,7 @@ let g:airline_theme='minimalist'
 let g:sneak#label = 1
 let g:ctrlp_show_hidden=1
 
-
+" Switch buffer tabs
 nnoremap <C-M> :bnext<CR>
 nnoremap <C-N> :bprev<CR>
 
