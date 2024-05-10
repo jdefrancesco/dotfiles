@@ -1,6 +1,6 @@
 set nocompatible
 call plug#begin('~/.vim/plugged')
-    Plug 'fmoralesc/vim-pad'
+Plug 'fmoralesc/vim-pad'
     " NERDTree
     Plug 'scrooloose/nerdtree'
     " Fun status bar
