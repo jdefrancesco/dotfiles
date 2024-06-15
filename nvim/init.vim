@@ -68,6 +68,8 @@ call plug#end()
 " let g:go_bin_path = $HOME."/go/bin"
 let g:go_bin_path = $HOME."/.local/bin"
 let g:go_doc_popup_window = 1
+let g:go_auto_import = 1
+let g:go_imports_autosave = 1
 
 
 let g:python3_host_prog = '/usr/bin/python3'
