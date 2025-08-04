@@ -7,7 +7,7 @@
 # (i.e. they will be reset, even if you hit enter a few times on empty command prompts)
 typeset -A host_repr
 # translate hostnames into shortened, colorcoded strings
-host_repr=('dieter-ws-a7n8x-arch' "%{$fg_bold[green]%}" 'dieter-p4sci-arch' "%{$fg[white]%}mit-lab")
+host_repr=('dieter-ws-a7n8x-arch' "%{$fg_bold[green]%}" 'dieter-p4sci-arch' "%{$fg[white]%}$HOST")
 # local time, color coded by last return code
 time_enabled="%(?.%{$fg[red]%}.%{$fg[red]%})%*%{$reset_color%}"
 time_disabled="%{$fg[red]%}%*%{$reset_color%}"
