@@ -19,7 +19,7 @@ set t_Co=256
 set nowrap
 set guifont=Envy\ Code\ R:h13
 
-set transparency=0
+" set transparency=0
 
 if filereadable(expand("~/.vimrc_background"))
   let base16colorspace=256
@@ -41,7 +41,7 @@ set smarttab
 
 autocmd BufWritePre *.c,*.py %s/\s\+$//e
 
-set noerrorbells 
+set noerrorbells
 set novisualbell
 set nocursorcolumn
 set autochdir
