@@ -1,0 +1,26 @@
+# Find directories and files for a given domain name. Note FUZZ is what is substituted
+ffuf -ac -v -u https://domain.com/FUZZ -w wordlist.txt -o ffuf-output
+
+# VHost fuzzing
+ffuf -u https://TARGET/ -H "Host: FUZZ.TARGET" -w subdomains.txt -fs 4242
+
+# File extension fuzzing
+ffuf -u https://TARGET/FUZZ -w /usr/share/wordlists/SecLists/Discovery/Web-Content/common.txt -e .php,.bak,.txt,.old,.html,.conf
+
+# Parameter fuzzing
+ffuf -u "https://TARGET/page.php?FUZZ=test" -w params.txt -mc 200,500
+
+# HTTP Method Discovery
+ffuf -X FUZZ -u https://TARGET/api/test -w methods.txt -mc all
+
+# Login Basic Auth Fuzzing
+ffuf -u https://TARGET/ -w users.txt:PASS -X GET -H "Authorization: Basic FUZZ" -mode pitchfork -mc 401,403,200
+
+# LFI Test
+ffuf -u "https://TARGET/page.php?file=FUZZ" -w lfi-list.txt -mc 200,500
+
+# GraphQL Endpoint Discovery
+ffuf -u https://TARGET/FUZZ -w graphql-endpoints.txt -mc 200
+
+
+

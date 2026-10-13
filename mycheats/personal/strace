@@ -1,0 +1,41 @@
+# To strace a command:
+strace <command>
+
+# Find out config file that a program is using
+strace -f -e open mplayer song.mp3
+
+# Write system log 
+strace -e write program
+
+# Connect system call
+strace -e connect PROGRAM
+
+# Ruby code not working that ran execve
+strace -f -e execve ./script.rb
+
+# To save the trace to a file:
+strace -o <outfile> <command>
+
+# To follow only the open() system call:
+strace -e trace=open <command>
+
+# To follow all the system calls which open a file:
+strace -e trace=file <command>
+
+# To follow all the system calls associated with process management:
+strace -e trace=process <command>
+
+# To follow child processes as they are created:
+strace -f <command>
+
+# To count time, calls and errors for each system call:
+strace -c <command>
+
+# To trace a running process (multiple PIDs can be specified):
+strace -p <pid>
+
+# Show strings
+strace -s 800
+
+# strace show file names instead of descriptor numbers
+strace -yy 

@@ -1,0 +1,38 @@
+---
+syntax: bash
+tags: [ cli, productivity ]
+---
+# Taskwarrior
+
+# Show tasks
+task
+
+# Complete task (we use task 2 for this example)
+task 2 done
+
+# Remove task
+task TASK_NUM delete
+
+# Next task to do
+task next
+
+# Show projects
+task projects
+
+# List tags
+task tags
+
+# Add new task with priority
+task add priority:H Some task here
+
+# Assign project to task
+task ID modify project:Project
+
+# Misc commands
+task ID modify due:31st
+task ID start/stop
+task ID modify priority:M
+
+# Add tags to task
+task ID modify +problem +house
+

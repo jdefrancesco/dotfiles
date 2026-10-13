@@ -1,0 +1,5 @@
+# Scan Internet for specific port
+ masscan 0.0.0.0/0 -p443 ––rate 10000000
+
+# Scan subnet for list of ports
+ masscan 10.11.0.0/16 -p80,443,8080 ––rate 1000000

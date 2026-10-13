@@ -1,0 +1,26 @@
+# Determine if firmware blob is compressed or encrypted:
+In general:
+    * Very accurate MonteCarlo Pi approx. are sure signs of ENCRYPTION (<0.01%)
+    * Large deviations in Chi Dist or large Pi error calculations are sure signs of COMPRESSION
+    * High Chi (>300), Low Pi (<0.03%) - ENCRYPTION
+    * Low Chi (<300), High Pi (>0.03%) - COMPRESSION
+
+# binwalk calculate entropy
+$ binwalk -E firmware.blob 
+
+# ent command
+ent  blob.bin
+
+# 24MB File Encrypted/Compressed for reference values
+Alg=None, Chi 15048.60, Pi=0.920%
+Alg=AES, Chi=351.68, Pi=0.022%
+Alg=3DES, Chi=357.50, Pi=0.029%
+Alg=LZMA, Chi=253.54, Pi=0.032%
+Alg=GZIP, Chi 11814.28, Pi=0.765% 
+
+- Most of those results follow the general rules. GZIP has a high Chi which  is misleading, high Pi gives it away
+  at 0.765%
+
+- LZMA follows the general advice well Chi < 300, Pi a tiny bit over 0.03%. The morale, make sure you look at both values.
+
+The more data the better results obviously.

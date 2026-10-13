@@ -1,0 +1,5 @@
+# Show hidden files and folders
+defaults write com.apple.finder AppleShowAllFiles -bool TRUE
+
+# Repeat characters by holding enabled/disabled
+defaults write -g ApplePressAndHoldEnabled -bool FALSE

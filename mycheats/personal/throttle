@@ -1,0 +1,14 @@
+# Simulate slower network (more specifically 3G)
+throttle --up 330 --down 780 -rtt 200
+
+# Simulate with profiles for ease of config.
+throttle --profile 3gslow
+
+# Add packet loss
+throttle --profile 3gslow --packetLoss 5
+
+# Stop throttle
+throttle stop   # or --stop
+
+# log commands used to setup the throttle.
+throttle 3gslow --log

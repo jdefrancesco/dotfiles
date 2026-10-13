@@ -3,6 +3,8 @@ unbind C-a
 set -g prefix C-b
 bind C-b send-prefix
 
+
+set -g allow-passthrough on
 # start with window 1 (instead of 0)
 set -g base-index 1
 

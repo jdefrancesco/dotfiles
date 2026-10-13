@@ -1,0 +1,11 @@
+# Get info on organization
+amass intel -org uber
+
+# Lookup based on CIDR range, to find all domains there
+amass intel -ip -src -cidr  127.0.0.1/28
+
+# Find subdomains for a given domain
+amass enum -ip -d host.com
+
+# Visualize
+amass viz -d3 domains.txt -o 443 /your/dir

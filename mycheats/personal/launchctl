@@ -1,0 +1,12 @@
+# Get current limit of open file descriptors
+launchctl limit maxfiles
+
+# Set new descriptor limits
+sudo launchctl limit maxfiles 4096 20000
+
+# Set descriptor limits permanently
+sudo launchctl load -w /Library/LaunchDaemons/limit.maxfiles.plist
+
+# Turn off crash reporting daemon
+launchctl unload -w /System/Library/LaunchAgents/com.apple.ReportCrash.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.ReportCrash.Root.plist

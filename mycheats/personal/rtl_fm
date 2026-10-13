@@ -1,0 +1,2 @@
+# Record RF OOK activity
+rtl_fm -s 2M -M am -f 433M - | sox -t raw -r 2000000 -e signed-integer -b 16 -c 1 -V1 - Wavfile.wav

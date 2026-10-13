@@ -1,0 +1,47 @@
+# Disk type
+$ disktype /dev/sda
+
+# Look at LVM 
+$ sudo mmls /dev/sdc
+$ sudo pvdisplay --maps --foreign --readonly
+$ sudo lvdisplay --maps --foreign --readonly
+
+# Is block (123) allocated?
+$ blkstat image.raw 123
+# Have an allocated block. What is inode?
+$ ifind image.raw 123
+# Have inode, show metadata 
+$ istat image.raw 2134
+# Got file inode. Get files name
+$ ffind image.raw 789
+# Got file name what is inode?
+$ ifind -n "hello.txt" image.raw
+
+
+# List all known files. Deleted and such
+$ fls -r -p image.raw
+$ fls -r
+
+# Extract file based on inode
+icat image.raw 1234
+# Extract file with file name
+fcat hello.txt /dev/sda
+
+
+# Commands
+
+Forensic Images: img_cat, img_stat
+Partitions: mmcat, mmls, mmstat
+Filesys Info: fsstat, pstat
+Filesystem Blocks: blkcalc, blkcat, blkls, blkstat
+Filenames: fcat, ffind, fls, fiwalk
+Inodes: icat, ifind, ils, istat
+Timelines: mactime, tsk_gettimes
+Search and Sort: sigfind, sorter, srch_strings, tsk_comparedir, tsk_loaddb, tsk_recover, hfind
+Filesystem Journal: jcat, jls, usnjls
+
+
+debugfs -R "ls -drl" image.raw
+debugfs -R "cat <inode>" image.raw
+debugfs -R "stat <inode" image.raw
+debugfs -R "inode_dump <14>" image.raw

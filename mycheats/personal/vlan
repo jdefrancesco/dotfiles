@@ -1,0 +1,8 @@
+# Load VLAN kernel module
+modprobe 8021q
+
+# Create new interface with desired VLAN ID
+vconfig add eth1 20
+
+# Assign it to network adapter on attacker laptop
+ifconfig eth1.20 192.168.1.2 netmask 255.255.255.0 up

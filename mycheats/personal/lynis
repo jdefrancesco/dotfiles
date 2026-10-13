@@ -1,0 +1,7 @@
+# Lynis audit
+lynis audit system
+
+# Lynis Misc
+lynis show commands
+lynis show options
+lynis show report

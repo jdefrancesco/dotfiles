@@ -1,0 +1,20 @@
+# Find all tags with certain name like "aes_128"
+vim -t '/aes_128'
+
+# Ctrl+] or g] or :tag usage will jump directly to the definition of the tag.
+
+# Instead of jump to the definition, we can list all available matches.
+:ts
+:ts usage [DEMO]
+
+# Use :ts with a preview window
+:pts
+
+# Close any preview windows
+:pc
+Ctrl+wz
+
+# Open result in horizontal split.
+Ctrl+w Ctrl+]
+
+# If a tag has multiple matches

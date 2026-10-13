@@ -1,0 +1,20 @@
+# Usage
+wpscan --url example.com options
+
+# Non-intrusive scan
+wpscan --url URL
+
+# Enumerate installed plugins
+wpscan --url $url --enumerate p
+
+# Enumerate installed vulnerable plugins
+wpscan --url $url --enumerate vp
+
+# Enumerate installed themes/vulnerable themes
+wpscan --url $url --enumerate vt
+
+# Enumerate users
+wpscan --url $url --enumerate u
+
+# Wordlist password brute force for a desired username
+wpscan --url $url --wordlist list.txt --username $user

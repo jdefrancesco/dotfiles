@@ -1,0 +1,5 @@
+# Add entitlement to gdb
+codesign --entitlements gdb-entitlements.xml -fs gdbc /usr/local/bin/gdb
+
+# Check signing info.
+codesign -dvv <binary>

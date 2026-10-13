@@ -1,0 +1,8 @@
+# Obtain vulnerable machine listings. Used EternalBlue search in example.
+$ shodan download cve_2019_0708 "windows 7 port:3389"
+
+# Parse results from a listing and extract target IP addresses.
+$ shodan parse --fields ip_str file.json.gz > listing.txt
+
+# Find tomcat severs
+$ shodan search --fields ip_str,port,org Apache Tomcat/8.5.13

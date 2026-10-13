@@ -1,0 +1,4 @@
+# Show APs
+nmcli device wifi
+
+

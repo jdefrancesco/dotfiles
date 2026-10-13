@@ -1,0 +1,13 @@
+# Tomb Encryption 
+
+# Lock tomb
+sudo tomb lock research.tomb -k research.tomb.key
+
+# Open tomb
+sudo tomb open research.tomb -k research.tomb.key
+
+# Close tomb 
+sudo tomb close
+
+# Close many tombs
+sudo tomb slam all

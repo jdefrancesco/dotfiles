@@ -1,0 +1,9 @@
+# Check if item is notarized
+spctl -a -vv /Path/To/Application.app
+
+# Add application approval
+spctl --add /Path/To/Application.app
+
+# Remove application exception
+spctl --remove /Path/To/Application.app
+

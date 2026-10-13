@@ -1,0 +1,25 @@
+# apt-key [deprecated]
+$ sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys [KEY_ID]
+
+# If you already have key.
+$ sudo apt-key add <path_to_key>
+
+# List keys
+$ sudo apt-key list
+
+
+# Modern way to manage keys.
+
+# apt-key is deprecated. Instead:
+$ wget -O - [URL] | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/[filename].gpg
+
+# verify keys are in place.
+$ ls /etc/apt/trusted.gpg.d/
+
+# Remove key
+$ sudo rm /etc/apt/trusted.gpg.d/[filename].gpg
+
+# Modern method for handling key stuff
+$ gpg --keyserver keyserver.ubuntu.com --recv-keys E88979FB9B30ACF2
+$ gpg --export E88979FB9B30ACF2 > google-earth.gpg
+

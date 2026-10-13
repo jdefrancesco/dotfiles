@@ -1,0 +1,28 @@
+# Split horizontal orientation
+ $mod+h
+
+# Enter fullscreen
+$mod+f
+
+# stacked, tabbed, togglesplit
+$mod+s
+$mod+w
+$mod+e
+
+# toggle tile and float
+$mod+shift+space
+
+# change focus from tiling to floating
+$mod+space
+
+# reload
+$mod+shift+c
+
+# restart i3
+$Mod+shift+r
+
+#exit
+$mod+shit+e
+
+# resize
+$mod+ctrl+shift+DIRECTION

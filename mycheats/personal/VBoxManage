@@ -1,0 +1,11 @@
+# Run VMBox headless
+
+# List VMS
+VBoxManage list vms
+
+# Active headless
+VBoxManage -s "VmName"
+
+# OR
+
+VBoxManage startvm ubuntu-server --type headless

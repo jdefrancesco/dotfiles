@@ -1,0 +1,3 @@
+# Create RAMDISK
+mkdir /tmp/afl-ramdisk && chmod 777 /tmp/afl-ramdisk
+mount -t tmpfs -o size=512M tmpfs /tmp/afl-ramdisk

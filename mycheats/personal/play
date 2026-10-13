@@ -1,0 +1,19 @@
+# Russian Roulette! Don't actually run!
+
+$ [$[$RANDOM % 6 ] == 0 ] && rm -rf / || echo "Lucky shot."
+
+# Flop Image
+
+mogrify -flop photo.jpg
+
+# Fork Bomb
+:(){ :|: & };:
+
+# Grab terminal colors
+TERM=Linux setterm -foreground [color] | xxd
+
+# Format source file for printer's consumption.
+$ a2ps -d source.c
+
+# A decent man page as PDF
+man -t man | ps2pdf - > man.pdf
